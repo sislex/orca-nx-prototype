@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+
+  .left {
+    flex: 0 0 100px;
+    position: relative;
+    background: #222;
+  }
+
+  .middle {
+    flex: 1 1 auto;
+    position: relative;
+    background: antiquewhite;
+  }
+
+  .right {
+    flex: 0 0 100px;
+    position: relative;
+    background: aqua;
+  }
+}

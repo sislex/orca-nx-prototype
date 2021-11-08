@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@driverz/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@driverz/driverz": ["libs/driverz/src/index.ts"],
+      "@driverz/grid": ["libs/grid/src/index.ts"],
+      "@driverz/ui": ["libs/ui/src/index.ts"],
+      "@driverz/ui-complex": ["libs/ui-complex/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
