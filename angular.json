@@ -9,9 +9,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/api-interfaces"
-          ],
+          "outputs": ["coverage/libs/api-interfaces"],
           "options": {
             "jestConfig": "libs/api-interfaces/jest.config.js",
             "passWithNoTests": true
@@ -37,9 +35,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/driverz"
-          ],
+          "outputs": ["coverage/libs/driverz"],
           "options": {
             "jestConfig": "libs/driverz/jest.config.js",
             "passWithNoTests": true
@@ -65,9 +61,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/driverz-app",
             "index": "apps/driverz-app/src/index.html",
@@ -80,7 +74,6 @@
               "apps/driverz-app/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/driverz-app/src/styles.scss"
             ],
             "scripts": []
@@ -147,9 +140,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/driverz-app"
-          ],
+          "outputs": ["coverage/apps/driverz-app"],
           "options": {
             "jestConfig": "apps/driverz-app/jest.config.js",
             "passWithNoTests": true
@@ -178,20 +169,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/driverz-app-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/driverz-app-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "driverz-app"
-      ]
+      "implicitDependencies": ["driverz-app"]
     },
     "grid": {
       "projectType": "library",
@@ -201,9 +186,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/grid"
-          ],
+          "outputs": ["coverage/libs/grid"],
           "options": {
             "jestConfig": "libs/grid/jest.config.js",
             "passWithNoTests": true
@@ -217,9 +200,68 @@
               "libs/grid/src/**/*.html"
             ]
           }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/grid/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/grid",
+            "config": {
+              "configFolder": "libs/grid/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
         }
       },
       "tags": []
+    },
+    "grid-e2e": {
+      "root": "apps/grid-e2e",
+      "sourceRoot": "apps/grid-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/grid-e2e/cypress.json",
+            "devServerTarget": "grid:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "grid:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/grid-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["grid"]
     },
     "ui": {
       "projectType": "library",
@@ -229,9 +271,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ui"
-          ],
+          "outputs": ["coverage/libs/ui"],
           "options": {
             "jestConfig": "libs/ui/jest.config.js",
             "passWithNoTests": true
@@ -240,10 +280,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/ui/src/**/*.ts",
-              "libs/ui/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
           }
         },
         "storybook": {
@@ -263,9 +300,7 @@
         },
         "build-storybook": {
           "builder": "@nrwl/storybook:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "uiFramework": "@storybook/angular",
             "outputPath": "dist/storybook/ui",
@@ -290,9 +325,7 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ui-complex"
-          ],
+          "outputs": ["coverage/libs/ui-complex"],
           "options": {
             "jestConfig": "libs/ui-complex/jest.config.js",
             "passWithNoTests": true
@@ -329,20 +362,14 @@
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/ui-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/ui-e2e/**/*.{js,ts}"]
           }
         }
       },
       "tags": [],
-      "implicitDependencies": [
-        "ui"
-      ]
+      "implicitDependencies": ["ui"]
     }
   }
 }

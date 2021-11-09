@@ -1,2 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '../../../node_modules/@angular/material/prebuilt-themes/indigo-pink.css';
+@import './libs/grid/src/lib/grid';
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

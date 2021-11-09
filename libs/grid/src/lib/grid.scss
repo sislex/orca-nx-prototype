@@ -1,0 +1,118 @@
+//@import '../../../iq-lib/src/styles/colors';
+@import '~ag-grid-community/dist/styles/ag-grid.css';
+@import '~ag-grid-community/dist/styles/ag-theme-alpine.css';
+@import '~ag-grid-community/src/styles/ag-theme-alpine/sass/ag-theme-alpine-mixin';
+
+//.ag-watermark {
+//  display: none !important;
+//}
+//
+.ag-theme-alpine {
+  @include ag-theme-alpine(
+    (
+      border-color: #e6e8e9,
+      secondary-border-color: #e6e8e9,
+      odd-row-background-color: #ffffff,
+    )
+  );
+
+  .ag-ltr .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected),
+  .ag-ltr .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+  .ag-ltr
+  .ag-has-focus
+  .ag-full-width-row.ag-row-focus
+  .ag-cell-wrapper.ag-row-group,
+  .ag-ltr .ag-cell-range-single-cell,
+  .ag-ltr .ag-cell-range-single-cell.ag-cell-range-handle,
+  .ag-rtl .ag-has-focus .ag-cell-focus:not(.ag-cell-range-selected),
+  .ag-rtl .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+  .ag-rtl
+  .ag-has-focus
+  .ag-full-width-row.ag-row-focus
+  .ag-cell-wrapper.ag-row-group,
+  .ag-rtl .ag-cell-range-single-cell,
+  .ag-rtl .ag-cell-range-single-cell.ag-cell-range-handle {
+    border-color: #e6e8e9;
+  }
+
+  .ag-header-cell {
+    background-color: #ffffff;
+    //color: $black48;
+    font-size: 12px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .my-class {
+    background-color: #7eff63;
+  }
+
+  .ag-header-cell-resize::after {
+    top: 0;
+    height: 100%;
+  }
+
+  .ag-row {
+    .ag-cell {
+      border-right-color: #e6e8e9;
+    }
+
+    &.ag-row-selected {
+      background-color: transparent;
+    }
+
+    &.ag-row-focus {
+      background-color: rgba(33, 150, 243, 0.3);
+    }
+  }
+
+  .ag-cell-value {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .ag-row-group {
+    background-color: #fafafa;
+    font-size: 16px;
+    //color: $black88;
+    font-weight: 500;
+
+    .ag-cell-wrapper.ag-row-group {
+      padding-left: 8px;
+    }
+
+    .ag-group-expanded,
+    .ag-group-contracted {
+      margin-right: 8px;
+
+      .ag-icon-tree-closed {
+        margin-right: 0;
+      }
+    }
+  }
+
+  //.ag-cell {
+  //  //color: $black88;
+  //  font-size: 16px;
+  //  line-height: 24px;
+  //  padding: 12px 16px;
+  //}
+
+  .grid-cell-missing {
+    //background-color: get-color($red, 100);
+    //color: $danger;
+  }
+
+  .grid-cell-na {
+    //color: $silver;
+  }
+
+  .ag-row-hover {
+    //background-color: #FFFCDD;
+
+    .grid-cell-missing {
+      background-color: #EAF4FE;
+
+    }
+  }
+}

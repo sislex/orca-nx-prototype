@@ -1,0 +1,10 @@
+<ag-grid-angular
+  class="ag-theme-alpine"
+  [gridOptions]="gridOptions"
+  [defaultColDef]="defaultColDef"
+  [columnDefs]="columnDefs"
+  [rowData]="rowDataList"
+  (columnResized)="onColumnResized($event)"
+  (gridReady)="onGridReady($event)"
+  [overlayLoadingTemplate]="overlayLoadingTemplate"
+></ag-grid-angular>

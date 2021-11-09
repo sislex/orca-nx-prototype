@@ -7,11 +7,6 @@ import { Component, OnInit, ViewEncapsulation, ChangeDetectionStrategy } from '@
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LayoutComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+export class LayoutComponent {
 
 }
