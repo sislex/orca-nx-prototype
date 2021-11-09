@@ -1,0 +1,4 @@
+<div class="menu-item" *ngFor="let menuItem of menu" [class.isActive]="menuItem.isActive" (click)="menuClick(menuItem)">
+  <span class="material-icons md-dark">{{menuItem.icon}}</span>
+  <span class="text">{{menuItem.text}}</span>
+</div>

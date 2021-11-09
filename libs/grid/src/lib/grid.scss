@@ -12,7 +12,7 @@
     (
       border-color: #e6e8e9,
       secondary-border-color: #e6e8e9,
-      odd-row-background-color: #ffffff,
+      //odd-row-background-color: #ffffff,
     )
   );
 
@@ -41,10 +41,6 @@
     font-size: 12px;
     letter-spacing: 0;
     text-transform: uppercase;
-  }
-
-  .my-class {
-    background-color: #7eff63;
   }
 
   .ag-header-cell-resize::after {
