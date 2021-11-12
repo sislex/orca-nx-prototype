@@ -1,1 +1,13 @@
-<driverz-grid [columns]="columns" [rowData]="rowData"></driverz-grid>
+<driverz-grid-layout>
+  <div top class="title">
+    <h1>{{getSelectedMenuText$ | async}}</h1>
+    <div *ngIf="(getSelectedMenuText$ | async) === 'Underwriting'">Displaying Records 20 - 40 of 50 Results</div>
+    <driverz-search (emitter)="events($event)"></driverz-search>
+  </div>
+  <driverz-grid middle
+                *ngIf="(getSelectedMenuText$ | async) === 'Underwriting'"
+                [columns]="columns"
+                [rowData]="rowData"
+  ></driverz-grid>
+  <div bottom>Pagination Here</div>
+</driverz-grid-layout>

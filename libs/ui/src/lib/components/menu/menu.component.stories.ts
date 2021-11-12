@@ -1,5 +1,4 @@
 import { moduleMetadata, Story, Meta } from '@storybook/angular';
-import {action} from '@storybook/addon-actions';
 import { MenuComponent } from './menu.component';
 import {UiModule} from "../../ui.module";
 import {MenuStub} from "./stubs";

@@ -1,1 +1,1 @@
-<driverz-menu [menu]="menu" (emitter)="events($event)"></driverz-menu>
+<driverz-menu [menu]="getMenu$ | async" (emitter)="events($event)"></driverz-menu>

@@ -1,9 +1,7 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import {Store} from "@ngrx/store";
-// eslint-disable-next-line
-import {MenuStub} from '../../../../../ui/src/lib/components/menu/stubs';
-// eslint-disable-next-line
-import {IMenuItem} from '../../../../../ui/src/lib/components/menu/menu.component';
+import {select, Store} from '@ngrx/store';
+import {setMenu} from '../../+state/view/view.actions';
+import {getMenu} from '../../+state/view/view.selectors';
 
 @Component({
   selector: 'driverz-menu-container',
@@ -13,15 +11,13 @@ import {IMenuItem} from '../../../../../ui/src/lib/components/menu/menu.componen
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuContainerComponent {
-
-  menu: IMenuItem[] = MenuStub;
+  getMenu$ = this.store.pipe(select(getMenu));
 
   constructor(private store: Store) { }
 
   events($event: {event: string, data: any}) {
     if ($event.event === 'MenuComponent:MENU_CLICKED') {
-      console.log($event.data);
-      // this.store.dispatch(setResultQuery({menu: $event.data}));
+      this.store.dispatch(setMenu({menu: $event.data}));
     }
   }
 }

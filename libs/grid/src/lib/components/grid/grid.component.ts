@@ -33,7 +33,7 @@ export class GridComponent {
 
   @Input() defaultColDef = {
     flex: 1,
-    minWidth: 300,
+    minWidth: 150,
 
     sortable: false,
     filter: true,
@@ -143,7 +143,7 @@ export class GridComponent {
   }
 
   onColumnResized(params: ColumnResizedEvent) {
-    params.api.resetRowHeights();
+    // params.api.resetRowHeights();
   }
 
   public showLoading() {

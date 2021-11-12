@@ -1,10 +1,12 @@
 :host {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
+  padding: 0 8px 8px 8px;
+  border-top: #414C74 solid 8px;
 
-  .left {
-    flex: 0 0 170px;
+  .top {
+    flex: 0 0 90px;
     position: relative;
   }
 
@@ -13,8 +15,8 @@
     position: relative;
   }
 
-  .right {
-    flex: 0 0 100px;
+  .bottom {
+    flex: 0 0 30px;
     position: relative;
   }
 }

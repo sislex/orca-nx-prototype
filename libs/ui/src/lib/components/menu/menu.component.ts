@@ -13,11 +13,11 @@ export interface IMenuItem {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuComponent {
-  @Input() public menu: IMenuItem[] = [];
+  @Input() menu: IMenuItem[] | null = [];
   @Output() emitter = new EventEmitter();
 
-  menuClick(menuItem: IMenuItem, menu: IMenuItem[] = this.menu) {
-    const newMenu = menu.map((item: IMenuItem) => ({...item, isActive: item === menuItem}));
+  menuClick(menuItem: IMenuItem, menu: IMenuItem[] | null = this.menu) {
+    const newMenu = menu?.map((item: IMenuItem) => ({...item, isActive: item === menuItem}));
     this.emitter.emit({
       event: 'MenuComponent:MENU_CLICKED',
       data: newMenu
